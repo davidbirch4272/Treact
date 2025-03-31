@@ -1,4 +1,4 @@
-/* START */
+/* STARTER */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
@@ -12,8 +12,11 @@
     margin: 0;
     font-family: "Inter", serif;
   }
+body {
+  overflow-x: hidden;
+}
 
-#landing, #features, #quality, #steps, #values, #pricing, #testimonials, #treact {
+ #landing, #features, #quality, #steps, #values, #pricing, #testimonials, #treact {
   padding-left: 32px;
   padding-right: 32px;
 }
@@ -69,11 +72,11 @@
     position: relative;
 }
 
-.nav__link::hover::after {
+.nav__link:hover::after, .nav__link--login:hover::after {
   opacity: 1;
 }
 
-.nav__link::after {
+.nav__link::after, .nav__link--login::after {
   content: "";
   position: absolute;
   left: 0px;
@@ -335,7 +338,7 @@ font-weight: 500;
 /* Quality */
 
 .quality__container {
-  padding:  96px  0;  
+  padding:  96px  50px;  
 }
 
 .quality__row {
@@ -373,10 +376,16 @@ letter-spacing: 0.025em;
 
 .quality__illustration {
 width: 50%;
+position: relative;
+border: 1px solid rgba(229, 231,235);
+
+z-index: 1;
 }
 
 .quality__image {
 width: 100%;
+position: relative;
+z-index: 1;
 
 }
 
@@ -403,8 +412,7 @@ width: 200px;
   scaleY(1); 
   width: 80px;
   height: 80px;
- 
- 
+  position: absolute;
   right: 0px;
   bottom: 0px;
   fill: rgb(100,21,255);
@@ -715,6 +723,7 @@ size: 160%;
   position: absolute;
   width: 30.6%;
   height: 8px;
+  border-radius: 8px;
   background: linear-gradient(115deg,rgb(56, 178, 172) 0%, rgb(129, 230, 217) 100%);
 }
 
@@ -722,6 +731,7 @@ size: 160%;
   position: absolute;
   width: 30.6%;
   height: 8px;
+  border-radius: 8px;
   background: linear-gradient(115deg,rgb(245, 101, 101) 0%, rgb(245, 178, 178) 100%);
 }
 
@@ -732,6 +742,10 @@ size: 160%;
   border-top: 2px solid rgb(149, 180, 221);
   border-bottom: 2px solid rgb(149, 180, 221);
   }
+
+.pricing__top--2 {
+  border-radius: 8px 8px 0 0;
+}
 
 .pricing__top, .pricing__middle, .pricing__bottom {
   padding: 32px;
@@ -1008,30 +1022,29 @@ letter-spacing: 0.025em;
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+  overflow: hidden;
 
 }
 
 .start__blob--1 {
  position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: -100px;
+    left: -100px;
     width: 250px;
     height: 250px;
-    transform: translateX(-5px) translateY(5px);
     z-index: 1;
     opacity: 0.5;
     }
 
 .start__blob--2 {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: -100px;
+  right: -100px;
   width: 200px;
   height: 200px;
-  transform: translateX(-1px) translateY(-5px);
   z-index: 1;
   opacity: 0.5;
-  
+    
 }
 
 .start__container {
@@ -1085,6 +1098,7 @@ justify-content: flex-end;
   transition: all 300ms;
   padding: 20px 40px;
   border-radius: 500px;
+  border: 1px solid rgba(160, 174, 192);
   font-weight: 700;
   font-size: 16px;
   color: #f7fafc;
@@ -1246,33 +1260,177 @@ letter-spacing: 0.05em;
 
 
 
-/* Small phones, tablets, large smartphones  
+/* Tablets, large smartphones    */  
 
-@media (max-width: 1024px)   {  Keep the numbers because that is when things change, you are probably going to have to lose the styling.
-  nav {
-     height: 68px;
-     }
-     h1 {
-        font-size: 28px;
-  
-     }
-     .about-me_info-para  {
-        font-size: 18px;
-           }
-           .language {
-              width: calc(100% / 2);
-           }
-  
-  .project__description--para {
-     font-size: 14px;
-     }
-  
-     .project__description { 
-           left: 30px;
-           padding-right: 30px;
-     }
+@media (max-width: 1024px)  {
+
+.nav__links {
+  display: none;
+}
+ 
+.btn__menu {
+display: block;
+background-color: transparent;
+font-size: 40px;
+text-align: center;
+border: none;
+transition: all 300ms ease;
+}
+
+.menu--open, .modal__links {
+  visibility: visible;
+  opacity: 1;
   }
+
+.menu--open {
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+
+.menu__close {
+  position: fixed;
+  top: 24px;
+  right: 18px;
+  }
+
+.modul {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+height: 378px;
+margin: 24px 16px;
+padding: 32px;
+background-color: #fff;
+border: 1px solid rgba(229, 231, 235);
+border-radius: 8px;
+z-index: 4;
+visibility: hidden;
+opacity: 0;
+transform: translateX(300%);
+transition: all 300ms ease;
+}
+
+.modal__links {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__link {
+  color: #1a202c;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 8px 0;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  }
+
+.modal__link--primary {
+  color: #f7fafc;
+  padding: 12px 32px;
+  background: #6415ff;
+  border-radius: 500px;
+  border: none;
+  }
+}
+
+.main__row {
+  flex-direction: column;
+  align-items: center;
+}
+
+.main__description {
+  align-items: center;
+}
+
+.main__theme  {
+font-size: 30px;
+width: 100%;
+max-width: 900px;
+}
+
+.main__subheadline {
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+.main__our--trusted--customers {
+  margin-top: 48px;
+
+}
+
+.main__trusted--customers {
+  margin: 16px 0 0;
+}
+
+
+.quality__theme {
+  font-size: 36px;
+}
+
+.quality__subheadline {
+  font-size: 16px;
+}
+
+.steps__theme {
+  font-size: 36px;
+}
+
+.values__headline {
+  font-size: 36px;
+}
+
+.values__list {
+  flex-direction: column;
+  max-width: 320px;
+}
+
+.pricing__plans {
+  flex-direction: column;
+  align-items: center;
+}
+
+.pricing__stripe--1, .pricing__stripe--2 {
+  width: 41.5%;
+
+}
+
+.testimonials__theme {
+  font-size: 36px;
+}
+
+.testimonials__subheadline {
+  font-size: 16px;
+}
+
+.start__row {
+  flex-direction: column;
+  align-items: center;
+}
+
+.start__title {
+  align-items: center;
+
+}
+
+.start__buttons {
+  margin-top: 24px;
+  width: auto;
   
+}
+
+
+
+
+
+
+
+
+
   /* Small phones, tablets, large smartphones  
   
   @media (max-width: 640px) {  Keep the numbers because that is when things change, you are probably going to have to lose the styling.
