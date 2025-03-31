@@ -16,7 +16,41 @@ body {
   overflow-x: hidden;
 }
 
- #landing, #features, #quality, #steps, #values, #pricing, #testimonials, #treact {
+.menu--open {
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+
+.modal {               
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+height: 378px;
+margin: 24px 16px;
+padding: 32px;
+background-color: #fff;
+border: 1px solid rgba(229, 231, 235);
+border-radius: 8px;
+z-index: 4;
+visibility: hidden;
+opacity: 0;
+transform: translateX(300%);
+transition: all 300ms ease;
+}
+
+.menu--open .modal {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0%);
+
+}
+
+.btn__menu {
+  display: none;
+} 
+
+#landing, #features, #quality, #steps, #values, #pricing, #testimonials, #treact {
   padding-left: 32px;
   padding-right: 32px;
 }
@@ -116,7 +150,7 @@ body {
  
  .main__container {
   padding:  96px  0;  
-  max-width: 1280px;
+  
   }
 
 .main__row {
@@ -1277,40 +1311,6 @@ border: none;
 transition: all 300ms ease;
 }
 
-.menu--open, .modal__links {
-  visibility: visible;
-  opacity: 1;
-  }
-
-.menu--open {
-  max-height: 100vh;
-  overflow-y: hidden;
-}
-
-.menu__close {
-  position: fixed;
-  top: 24px;
-  right: 18px;
-  }
-
-.modul {
-position: fixed;
-top: 0;
-left: 0;
-right: 0;
-height: 378px;
-margin: 24px 16px;
-padding: 32px;
-background-color: #fff;
-border: 1px solid rgba(229, 231, 235);
-border-radius: 8px;
-z-index: 4;
-visibility: hidden;
-opacity: 0;
-transform: translateX(300%);
-transition: all 300ms ease;
-}
-
 .modal__links {
   width: 100%;
   height: 100%;
@@ -1336,26 +1336,40 @@ transition: all 300ms ease;
   border-radius: 500px;
   border: none;
   }
-}
 
 .main__row {
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
+
 .main__description {
-  align-items: center;
+width: 100%;
+text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+max-width: 500px;
+margin: 0 auto;
+
 }
 
 .main__theme  {
 font-size: 30px;
 width: 100%;
 max-width: 900px;
+
 }
 
 .main__subheadline {
   font-size: 16px;
   margin: 20px 0;
+}
+
+.header__email {
+  transform: translateX(115px)
 }
 
 .main__our--trusted--customers {
@@ -1364,12 +1378,13 @@ max-width: 900px;
 }
 
 .main__trusted--customers {
-  margin: 16px 0 0;
-}
+ padding-right: 0px;
+  }
 
 
 .quality__theme {
   font-size: 36px;
+  align-items: center;
 }
 
 .quality__subheadline {
@@ -1412,64 +1427,159 @@ max-width: 900px;
   align-items: center;
 }
 
-.start__title {
-  align-items: center;
 
+.start__title {
+  text-align: center;
+  width: 100%;
+  max-width: 512px;
 }
+
 
 .start__buttons {
   margin-top: 24px;
   width: auto;
+  text-align: center;
   
+}
+}
+
+/* Tablets & large smartphones */
+
+@media (max-width: 768px) {
+  
+  .features__para--main {
+    font-size: 14px;
+  }
+  .features__row--features {
+    justify-content: center;
+  }
+#steps .steps__row, #testimonials .testimonials__row {
+  flex-direction: column;
+  align-items: center;
+}
+
+.quality__description, .quality__illustration, .steps__illustration, .steps__description, .values__description, .values__illustration, .testimonials__description, .testimonials__illustration {
+  width: 100%;
+  max-width: 448px;
+} 
+
+.quality__description, .steps__description, .values__description, .testimonials__description {
+  padding: 0;
+  margin-top: 64px;
+  text-align: center;
+}
+
+#quality .quality__row, #values .values__row {
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.steps__step {
+  flex-direction: column;
+  align-items: center;
+}
+
+.steps__description--title {
+  margin-top: 10px;
+}
+
+.values__list, .values__value--title {
+  margin: 0 auto;
+
+}
+
+.values__illustration {
+  padding-top: 96px;
+}
+
+.values__para--main {
+  font-size: 14px;
+}
+
+.testimonials__subheadline {
+  font-size: 14px;
+}
+
+.pricing__stripe--1 {
+
+  border-top: 250%;
+    /* Here */
+
 }
 
 
-
-
-
-
-
-
-
-  /* Small phones, tablets, large smartphones  
-  
-  @media (max-width: 640px) {  Keep the numbers because that is when things change, you are probably going to have to lose the styling.
-     .nav__link:not(:last-child)   {
-     display: none;
-     }
-  
-  .project__description--para {
-     display: none;
-  }
-  
-  .project__description--links {
-        display: flex;
-        justify-content: start;
-        
-        
-     }
-     
-  .project__description {
-  padding: 0;
-  left: 0;
-  width: 100%;
-  }
-  
-  
-  .project__description--title {
-    font-size: 22px;
-     line-height: 1;
-     display: flex;
-     text-align: center;
+.footer__columns {
+  justify-content: flex-start;
   
   }
+
+  .footer__column {
+    width: calc(100% / 3);
+  }
+
+.footer__bottom {
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__copyright, .footer__socials {
+  margin-top: 32px;
+}
+
+}
+
+
+/* Small cellphones */
   
-  .project__description--sub-title {
-     display: flex;
-     text-align: center;
-     margin: 12px 0;
+  @media (max-width: 640px)   {
+  
+  
+  .header__email {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
   }
   
-  }    
+  .header__email--input {
+    position: static;
+    padding: 16px 0;
+    padding-left: 32px;
+    line-height: 1.5;
+    align-items: center;
+
+  }
+
+  .header__email--button {
+    width: 100%;
+    padding: 16px 0;
+    margin: 16px 0;
+    margin-bottom: 1.5;
+
+  }
+
+  .main__our--trusted--customers {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+
+  .main__illustration {
+    margin-top: 48px;
+    width: 100%;
+}
+
+.features__headline, .pricing__headline {
+  font-size: 36px;
+
+}
+
+.features__row--feature {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+  }
+   
   
-  */ 
+  
