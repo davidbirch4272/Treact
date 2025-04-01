@@ -1482,6 +1482,16 @@ max-width: 900px;
 
 }
 
+.values__value  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0;
+
+}
+
+
 .values__illustration {
   padding-top: 96px;
 }
@@ -1563,6 +1573,10 @@ max-width: 900px;
 
 }
 
+.features__row--features {
+flex-direction: column;
+}
+
 .features__row--feature {
   flex-direction: column;
   align-items: center;
@@ -1571,11 +1585,6 @@ max-width: 900px;
 
 .features__wrapper {
   margin-left: 0;
-}
-
-.values__value {
-  margin-right: 0;
-
 }
 
 .start__buttons {
