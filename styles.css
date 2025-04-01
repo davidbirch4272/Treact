@@ -748,25 +748,13 @@ size: 160%;
   width: 100%;
   max-width: 384px;
   margin: 64px 32px 0 0;
-  padding-top: 8px;
   border-radius: 8px;
   overflow: hidden;
-
-}
-.pricing__stripe--1{
-  position: absolute;
-  width: 30.6%;
-  height: 8px;
-  border-radius: 8px;
-  background: linear-gradient(115deg,rgb(56, 178, 172) 0%, rgb(129, 230, 217) 100%);
 }
 
-.pricing__stripe--2{
-  position: absolute;
-  width: 30.6%;
-  height: 8px;
-  border-radius: 8px;
-  background: linear-gradient(115deg,rgb(245, 101, 101) 0%, rgb(245, 178, 178) 100%);
+.pricing__plan--1, .pricing__plan--3 {
+  border-top: 5px solid rgba(129, 230, 217);
+  border-radius: 5px;
 }
 
 .pricing__top--2, .pricing__middle--2, .pricing__bottom--2 {
@@ -1149,6 +1137,7 @@ justify-content: flex-end;
 .footer__container  {
   padding: 96px 32px;
   background-color: rgb(100, 21, 255);
+  margin-top: 108px;
   margin-bottom: -32px;
   position: relative;
   overflow: hidden;
@@ -1183,6 +1172,7 @@ justify-content: flex-end;
   max-width: 1280px;
   margin: 0 auto;
 }
+
 .footer__columns {
 margin-top: -48px;
 display: flex;
@@ -1409,11 +1399,6 @@ max-width: 900px;
   align-items: center;
 }
 
-.pricing__stripe--1, .pricing__stripe--2 {
-  width: 41.5%;
-
-}
-
 .testimonials__theme {
   font-size: 36px;
 }
@@ -1466,6 +1451,7 @@ max-width: 900px;
 .quality__description, .steps__description, .values__description, .testimonials__description {
   padding: 0;
   margin-top: 64px;
+  margin-right: 0px;
   text-align: center;
 }
 
@@ -1477,10 +1463,12 @@ max-width: 900px;
 .steps__step {
   flex-direction: column;
   align-items: center;
-}
+ }
 
 .steps__description--title {
   margin-top: 10px;
+  align-items: center;
+  margin-right: 20px;
 }
 
 .values__list, .values__value--title {
@@ -1499,14 +1487,6 @@ max-width: 900px;
 .testimonials__subheadline {
   font-size: 14px;
 }
-
-.pricing__stripe--1 {
-
-  border-top: 250%;
-    /* Here */
-
-}
-
 
 .footer__columns {
   justify-content: flex-start;
@@ -1535,27 +1515,32 @@ max-width: 900px;
   
   
   .header__email {
+    position: relative;
+    display: flex;
     flex-direction: column;
     height: auto;
     align-items: center;
+    justify-content: center;
+    transform: translateX(20px);
+    max-width: 448px;
   }
   
   .header__email--input {
-    position: static;
-    padding: 16px 0;
+    position: relative;
+    width: 100%;
+    padding: 16px 0px 16px 32px;
     padding-left: 32px;
     line-height: 1.5;
     align-items: center;
-
-  }
+      }
 
   .header__email--button {
     width: 100%;
+    max-width: 448px;
     padding: 16px 0;
-    margin: 16px 0;
-    margin-bottom: 1.5;
-
-  }
+    margin: 16px 0 0;
+    line-height: 1.5;
+      }
 
   .main__our--trusted--customers {
     font-size: 14px;
@@ -1577,9 +1562,23 @@ max-width: 900px;
   align-items: center;
   text-align: center;
 }
-
-
   }
+
+.start__buttons {
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.get__started--btn {
+  margin: 1px 0px 1px 1px;
+  padding: 12px 24px;
+}
+
+.contact__Us--btn {
+  margin: 16px 1px 1px;
+  padding: 12px  24px;
+}
    
   
   
