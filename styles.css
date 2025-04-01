@@ -466,6 +466,7 @@ padding: 96px 0;
 width: 100%;
 max-width: 1320px;
 max-height: 732px;
+margin: 0 auto;
 }
 
 .steps__row  {
